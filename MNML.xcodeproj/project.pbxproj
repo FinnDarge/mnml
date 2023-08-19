@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851E357F2A91317D00C4EB91 /* WorkoutsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E357E2A91317D00C4EB91 /* WorkoutsListView.swift */; };
+		851E35812A9131A000C4EB91 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E35802A9131A000C4EB91 /* AddWorkoutView.swift */; };
+		851E35832A9131C400C4EB91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E35822A9131C400C4EB91 /* ContentView.swift */; };
 		85AED2D02A9114660069B630 /* MNMLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2CF2A9114660069B630 /* MNMLApp.swift */; };
-		85AED2D22A9114660069B630 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2D12A9114660069B630 /* ContentView.swift */; };
 		85AED2D42A9114670069B630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AED2D32A9114670069B630 /* Assets.xcassets */; };
 		85AED2D72A9114670069B630 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AED2D62A9114670069B630 /* Preview Assets.xcassets */; };
 		85AED2D92A9114670069B630 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2D82A9114670069B630 /* Persistence.swift */; };
@@ -36,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		851E357E2A91317D00C4EB91 /* WorkoutsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListView.swift; sourceTree = "<group>"; };
+		851E35802A9131A000C4EB91 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
+		851E35822A9131C400C4EB91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		85AED2CC2A9114660069B630 /* MNML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MNML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AED2CF2A9114660069B630 /* MNMLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNMLApp.swift; sourceTree = "<group>"; };
-		85AED2D12A9114660069B630 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		85AED2D32A9114670069B630 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AED2D62A9114670069B630 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85AED2D82A9114670069B630 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -99,11 +103,13 @@
 			isa = PBXGroup;
 			children = (
 				85AED2CF2A9114660069B630 /* MNMLApp.swift */,
-				85AED2D12A9114660069B630 /* ContentView.swift */,
 				85AED2D32A9114670069B630 /* Assets.xcassets */,
 				85AED2D82A9114670069B630 /* Persistence.swift */,
 				85AED2DA2A9114670069B630 /* MNML.xcdatamodeld */,
 				85AED2D52A9114670069B630 /* Preview Content */,
+				851E357E2A91317D00C4EB91 /* WorkoutsListView.swift */,
+				851E35802A9131A000C4EB91 /* AddWorkoutView.swift */,
+				851E35822A9131C400C4EB91 /* ContentView.swift */,
 			);
 			path = MNML;
 			sourceTree = "<group>";
@@ -218,7 +224,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				de,
 			);
 			mainGroup = 85AED2C32A9114660069B630;
 			productRefGroup = 85AED2CD2A9114660069B630 /* Products */;
@@ -264,8 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				85AED2D92A9114670069B630 /* Persistence.swift in Sources */,
+				851E35812A9131A000C4EB91 /* AddWorkoutView.swift in Sources */,
+				851E35832A9131C400C4EB91 /* ContentView.swift in Sources */,
 				85AED2DC2A9114670069B630 /* MNML.xcdatamodeld in Sources */,
-				85AED2D22A9114660069B630 /* ContentView.swift in Sources */,
+				851E357F2A91317D00C4EB91 /* WorkoutsListView.swift in Sources */,
 				85AED2D02A9114660069B630 /* MNMLApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,9 +447,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Finn-RasmusDarge.MNML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,9 +478,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Finn-RasmusDarge.MNML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
