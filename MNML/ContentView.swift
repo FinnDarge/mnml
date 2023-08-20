@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var viewContext
     @State private var isAddingWorkout = false
 
     var body: some View {
@@ -19,17 +20,17 @@ struct ContentView: View {
                 }
                 Spacer()
                 NavigationLink(destination: WorkoutsListView()) {
-                    Text("Workouts", comment: "Workouts button label")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+                                    Text("Workouts")
+                                        .padding()
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                };
                 Spacer()
             }
             .navigationBarTitle("", displayMode: .inline)
             .sheet(isPresented: $isAddingWorkout) {
-                AddWorkoutView()
+                            AddWorkoutView()
             }
         }
     }
@@ -37,9 +38,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
-            .previewDisplayName("iPhone 14")
+        ContentView().environment(\.managedObjectContext, DataController.preview.container.viewContext)
     }
 }
 

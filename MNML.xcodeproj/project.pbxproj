@@ -10,11 +10,11 @@
 		851E357F2A91317D00C4EB91 /* WorkoutsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E357E2A91317D00C4EB91 /* WorkoutsListView.swift */; };
 		851E35812A9131A000C4EB91 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E35802A9131A000C4EB91 /* AddWorkoutView.swift */; };
 		851E35832A9131C400C4EB91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E35822A9131C400C4EB91 /* ContentView.swift */; };
+		852488792A923167007A4840 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 852488772A923167007A4840 /* Model.xcdatamodeld */; };
+		8524887B2A9231B2007A4840 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524887A2A9231B2007A4840 /* DataController.swift */; };
 		85AED2D02A9114660069B630 /* MNMLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2CF2A9114660069B630 /* MNMLApp.swift */; };
 		85AED2D42A9114670069B630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AED2D32A9114670069B630 /* Assets.xcassets */; };
 		85AED2D72A9114670069B630 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AED2D62A9114670069B630 /* Preview Assets.xcassets */; };
-		85AED2D92A9114670069B630 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2D82A9114670069B630 /* Persistence.swift */; };
-		85AED2DC2A9114670069B630 /* MNML.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2DA2A9114670069B630 /* MNML.xcdatamodeld */; };
 		85AED2E62A9114670069B630 /* MNMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2E52A9114670069B630 /* MNMLTests.swift */; };
 		85AED2F02A9114670069B630 /* MNMLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2EF2A9114670069B630 /* MNMLUITests.swift */; };
 		85AED2F22A9114670069B630 /* MNMLUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2F12A9114670069B630 /* MNMLUITestsLaunchTests.swift */; };
@@ -41,12 +41,12 @@
 		851E357E2A91317D00C4EB91 /* WorkoutsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListView.swift; sourceTree = "<group>"; };
 		851E35802A9131A000C4EB91 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
 		851E35822A9131C400C4EB91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		852488782A923167007A4840 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		8524887A2A9231B2007A4840 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		85AED2CC2A9114660069B630 /* MNML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MNML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AED2CF2A9114660069B630 /* MNMLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNMLApp.swift; sourceTree = "<group>"; };
 		85AED2D32A9114670069B630 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AED2D62A9114670069B630 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		85AED2D82A9114670069B630 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		85AED2DB2A9114670069B630 /* MNML.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MNML.xcdatamodel; sourceTree = "<group>"; };
 		85AED2E12A9114670069B630 /* MNMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MNMLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AED2E52A9114670069B630 /* MNMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNMLTests.swift; sourceTree = "<group>"; };
 		85AED2EB2A9114670069B630 /* MNMLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MNMLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,12 +104,12 @@
 			children = (
 				85AED2CF2A9114660069B630 /* MNMLApp.swift */,
 				85AED2D32A9114670069B630 /* Assets.xcassets */,
-				85AED2D82A9114670069B630 /* Persistence.swift */,
-				85AED2DA2A9114670069B630 /* MNML.xcdatamodeld */,
 				85AED2D52A9114670069B630 /* Preview Content */,
 				851E357E2A91317D00C4EB91 /* WorkoutsListView.swift */,
 				851E35802A9131A000C4EB91 /* AddWorkoutView.swift */,
 				851E35822A9131C400C4EB91 /* ContentView.swift */,
+				852488772A923167007A4840 /* Model.xcdatamodeld */,
+				8524887A2A9231B2007A4840 /* DataController.swift */,
 			);
 			path = MNML;
 			sourceTree = "<group>";
@@ -269,10 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AED2D92A9114670069B630 /* Persistence.swift in Sources */,
 				851E35812A9131A000C4EB91 /* AddWorkoutView.swift in Sources */,
+				8524887B2A9231B2007A4840 /* DataController.swift in Sources */,
 				851E35832A9131C400C4EB91 /* ContentView.swift in Sources */,
-				85AED2DC2A9114670069B630 /* MNML.xcdatamodeld in Sources */,
+				852488792A923167007A4840 /* Model.xcdatamodeld in Sources */,
 				851E357F2A91317D00C4EB91 /* WorkoutsListView.swift in Sources */,
 				85AED2D02A9114660069B630 /* MNMLApp.swift in Sources */,
 			);
@@ -601,13 +601,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		85AED2DA2A9114670069B630 /* MNML.xcdatamodeld */ = {
+		852488772A923167007A4840 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				85AED2DB2A9114670069B630 /* MNML.xcdatamodel */,
+				852488782A923167007A4840 /* Model.xcdatamodel */,
 			);
-			currentVersion = 85AED2DB2A9114670069B630 /* MNML.xcdatamodel */;
-			path = MNML.xcdatamodeld;
+			currentVersion = 852488782A923167007A4840 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -2,14 +2,14 @@ import SwiftUI
 
 struct AddWorkoutView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) var viewContext
     
     @State private var exerciseName = ""
     @State private var sets = ""
     @State private var reps = ""
-    @State private var isShowingAlert = false
     @State private var workoutName = ""
     @State private var exercises: [Exercise] = []
-
+    
     var body: some View {
         NavigationView {
             Form {
@@ -19,20 +19,17 @@ struct AddWorkoutView: View {
                 Section(header: Text("Exercise")) {
                     TextField("Exercise Name", text: $exerciseName)
                 }
-                
                 Section(header: Text("Sets and Reps")) {
                     HStack {
                         TextField("Sets", text: $sets)
                         TextField("Reps", text: $reps)
                     }
                 }
-                
                 Section {
                     Button("Add Exercise") {
                         addExercise()
                     }
                 }
-                
                 if !exercises.isEmpty {
                     Section(header: Text("Added Exercises")) {
                         ForEach(exercises, id: \.self) { exercise in
@@ -56,17 +53,20 @@ struct AddWorkoutView: View {
     }
     
     private func saveWorkout() {
-            guard !workoutName.isEmpty else {
-                return
-            }
-            
-            let newWorkout = Workout(name: workoutName, exercises: exercises)
-            // You can store the newWorkout instance in your app's data structure or manager
-            
-            // Clear input fields and exercises array
-            workoutName = ""
-            exercises.removeAll()
+        guard !workoutName.isEmpty else {
+            return
         }
+        
+        // Create a new Workout entity and save it
+        let newWorkout = Workout(context: viewContext)
+        newWorkout.name = workoutName
+
+        DataController.shared.saveContext()
+        
+        // Clear input fields and exercises array
+        workoutName = ""
+        exercises.removeAll()
+    }
     
     private func addExercise() {
         guard !exerciseName.isEmpty,
@@ -83,12 +83,6 @@ struct AddWorkoutView: View {
         sets = ""
         reps = ""
     }
-}
-
-struct Workout: Identifiable {
-    let id = UUID()
-    let name: String
-    let exercises: [Exercise]
 }
 
 struct Exercise: Hashable {
