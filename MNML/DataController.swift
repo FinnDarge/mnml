@@ -18,6 +18,10 @@ struct DataController {
         let newWorkout = Workout(context: viewContext)
         newWorkout.name = "Workout Number 1"
 
+        let newExercise = Exercise(context: viewContext)
+        newExercise.name = "Exercise 1"
+        
+        newWorkout.addToExercises(newExercise)
         shared.saveContext()
         
         return result

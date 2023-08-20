@@ -8,7 +8,7 @@ struct AddWorkoutView: View {
     @State private var sets = ""
     @State private var reps = ""
     @State private var workoutName = ""
-    @State private var exercises: [Exercise] = []
+    @State private var addedExercises: [Exercise] = [] // Track added exercises
     
     var body: some View {
         NavigationView {
@@ -30,26 +30,41 @@ struct AddWorkoutView: View {
                         addExercise()
                     }
                 }
-                if !exercises.isEmpty {
+                if !addedExercises.isEmpty {
                     Section(header: Text("Added Exercises")) {
-                        ForEach(exercises, id: \.self) { exercise in
-                            HStack {
-                                Text(exercise.name)
-                                Spacer()
-                                Text("\(exercise.sets) Sets | \(exercise.reps) Reps")
-                                    .foregroundColor(.secondary)
+                        ForEach(addedExercises, id: \.self) { exercise in
+                                Text("\(exercise.name ?? "Unknown Exercise") | \(exercise.sets) Sets | \(exercise.reps) Reps")
                             }
-                        }
                     }
                 }
             }
             .navigationBarTitle("Add Workout", displayMode: .inline)
             .navigationBarItems(trailing: Button("Done") {
-                // Perform action to save the new workout with the entered details
+                // Perform action to save the new workout with the entered details and associated exercises
                 saveWorkout()
                 presentationMode.wrappedValue.dismiss()
             })
         }
+    }
+    
+    private func addExercise() {
+        guard !exerciseName.isEmpty,
+              let setsValue = Int(sets),
+              let repsValue = Int(reps) else {
+            return
+        }
+        
+        let newExercise = Exercise(context: viewContext)
+        newExercise.name = exerciseName
+        newExercise.sets = Int16(setsValue)
+        newExercise.reps = Int16(repsValue)
+        
+        addedExercises.append(newExercise) // Track the added exercise
+        
+        // Clear input fields
+        exerciseName = ""
+        sets = ""
+        reps = ""
     }
     
     private func saveWorkout() {
@@ -60,33 +75,17 @@ struct AddWorkoutView: View {
         // Create a new Workout entity and save it
         let newWorkout = Workout(context: viewContext)
         newWorkout.name = workoutName
+        
+        // Associate the added exercises with the new workout
+        for exercise in addedExercises {
+            newWorkout.addToExercises(exercise)
+        }
 
         DataController.shared.saveContext()
         
         // Clear input fields and exercises array
         workoutName = ""
-        exercises.removeAll()
-    }
-    
-    private func addExercise() {
-        guard !exerciseName.isEmpty,
-              let setsValue = Int(sets),
-              let repsValue = Int(reps) else {
-            return
-        }
-        
-        let newExercise = Exercise(name: exerciseName, sets: setsValue, reps: repsValue)
-        exercises.append(newExercise)
-        
-        // Clear input fields
-        exerciseName = ""
-        sets = ""
-        reps = ""
+        addedExercises.removeAll()
     }
 }
 
-struct Exercise: Hashable {
-    let name: String
-    let sets: Int
-    let reps: Int
-}

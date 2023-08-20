@@ -12,6 +12,11 @@
 		851E35832A9131C400C4EB91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E35822A9131C400C4EB91 /* ContentView.swift */; };
 		852488792A923167007A4840 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 852488772A923167007A4840 /* Model.xcdatamodeld */; };
 		8524887B2A9231B2007A4840 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524887A2A9231B2007A4840 /* DataController.swift */; };
+		852488812A925A22007A4840 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852488802A925A22007A4840 /* WorkoutDetailView.swift */; };
+		852488862A92634F007A4840 /* Workout+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852488822A92634F007A4840 /* Workout+CoreDataClass.swift */; };
+		852488872A92634F007A4840 /* Workout+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852488832A92634F007A4840 /* Workout+CoreDataProperties.swift */; };
+		852488882A92634F007A4840 /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852488842A92634F007A4840 /* Exercise+CoreDataClass.swift */; };
+		852488892A92634F007A4840 /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852488852A92634F007A4840 /* Exercise+CoreDataProperties.swift */; };
 		85AED2D02A9114660069B630 /* MNMLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED2CF2A9114660069B630 /* MNMLApp.swift */; };
 		85AED2D42A9114670069B630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AED2D32A9114670069B630 /* Assets.xcassets */; };
 		85AED2D72A9114670069B630 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AED2D62A9114670069B630 /* Preview Assets.xcassets */; };
@@ -43,6 +48,11 @@
 		851E35822A9131C400C4EB91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		852488782A923167007A4840 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8524887A2A9231B2007A4840 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		852488802A925A22007A4840 /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		852488822A92634F007A4840 /* Workout+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workout+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		852488832A92634F007A4840 /* Workout+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workout+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		852488842A92634F007A4840 /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		852488852A92634F007A4840 /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		85AED2CC2A9114660069B630 /* MNML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MNML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AED2CF2A9114660069B630 /* MNMLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNMLApp.swift; sourceTree = "<group>"; };
 		85AED2D32A9114670069B630 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +112,10 @@
 		85AED2CE2A9114660069B630 /* MNML */ = {
 			isa = PBXGroup;
 			children = (
+				852488822A92634F007A4840 /* Workout+CoreDataClass.swift */,
+				852488832A92634F007A4840 /* Workout+CoreDataProperties.swift */,
+				852488842A92634F007A4840 /* Exercise+CoreDataClass.swift */,
+				852488852A92634F007A4840 /* Exercise+CoreDataProperties.swift */,
 				85AED2CF2A9114660069B630 /* MNMLApp.swift */,
 				85AED2D32A9114670069B630 /* Assets.xcassets */,
 				85AED2D52A9114670069B630 /* Preview Content */,
@@ -110,6 +124,7 @@
 				851E35822A9131C400C4EB91 /* ContentView.swift */,
 				852488772A923167007A4840 /* Model.xcdatamodeld */,
 				8524887A2A9231B2007A4840 /* DataController.swift */,
+				852488802A925A22007A4840 /* WorkoutDetailView.swift */,
 			);
 			path = MNML;
 			sourceTree = "<group>";
@@ -269,10 +284,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				852488872A92634F007A4840 /* Workout+CoreDataProperties.swift in Sources */,
 				851E35812A9131A000C4EB91 /* AddWorkoutView.swift in Sources */,
+				852488812A925A22007A4840 /* WorkoutDetailView.swift in Sources */,
 				8524887B2A9231B2007A4840 /* DataController.swift in Sources */,
+				852488892A92634F007A4840 /* Exercise+CoreDataProperties.swift in Sources */,
 				851E35832A9131C400C4EB91 /* ContentView.swift in Sources */,
+				852488882A92634F007A4840 /* Exercise+CoreDataClass.swift in Sources */,
 				852488792A923167007A4840 /* Model.xcdatamodeld in Sources */,
+				852488862A92634F007A4840 /* Workout+CoreDataClass.swift in Sources */,
 				851E357F2A91317D00C4EB91 /* WorkoutsListView.swift in Sources */,
 				85AED2D02A9114660069B630 /* MNMLApp.swift in Sources */,
 			);

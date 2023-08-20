@@ -5,15 +5,18 @@ struct WorkoutsListView: View {
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Workout.name, ascending: true)]) var workouts: FetchedResults<Workout>
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(workouts) {
-                    workout in
-                    Text(workout.name ?? "")
-                }.onDelete(perform: deleteWorkout)
+            VStack {
+                List {
+                    ForEach(workouts) { workout in
+                        NavigationLink(destination: WorkoutDetailView(workout: workout)) {
+                            Text(workout.name ?? "")
+                        }
+                    }
+                    .onDelete(perform: deleteWorkout)
+                }
+                .toolbar { EditButton() }
             }
         }
-    }
     
     private func deleteWorkout(offsets: IndexSet) {
         withAnimation {
