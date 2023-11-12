@@ -7,6 +7,7 @@ struct AddWorkoutView: View {
     @State private var exerciseName = ""
     @State private var sets = ""
     @State private var reps = ""
+    @State private var weight = ""
     @State private var workoutName = ""
     @State private var addedExercises: [Exercise] = [] // Track added exercises
     
@@ -19,10 +20,11 @@ struct AddWorkoutView: View {
                 Section(header: Text("Exercise")) {
                     TextField("Exercise Name", text: $exerciseName)
                 }
-                Section(header: Text("Sets and Reps")) {
+                Section(header: Text("Sets, Reps, Weight")) {
                     HStack {
                         TextField("Sets", text: $sets)
                         TextField("Reps", text: $reps)
+                        TextField("Weight", text: $weight)
                     }
                 }
                 Section {
@@ -33,7 +35,7 @@ struct AddWorkoutView: View {
                 if !addedExercises.isEmpty {
                     Section(header: Text("Added Exercises")) {
                         ForEach(addedExercises, id: \.self) { exercise in
-                                Text("\(exercise.name ?? "Unknown Exercise") | \(exercise.sets) Sets | \(exercise.reps) Reps")
+                                Text("\(exercise.name ?? "Unknown Exercise") | \(exercise.sets) Sets | \(exercise.reps) Reps | \(exercise.weight) Kg")
                             }
                     }
                 }
@@ -50,7 +52,8 @@ struct AddWorkoutView: View {
     private func addExercise() {
         guard !exerciseName.isEmpty,
               let setsValue = Int(sets),
-              let repsValue = Int(reps) else {
+              let repsValue = Int(reps),
+        let weightValue = Int(weight) else {
             return
         }
         
@@ -58,6 +61,7 @@ struct AddWorkoutView: View {
         newExercise.name = exerciseName
         newExercise.sets = Int16(setsValue)
         newExercise.reps = Int16(repsValue)
+        newExercise.weight = Int16(weightValue)
         
         addedExercises.append(newExercise) // Track the added exercise
         
@@ -65,6 +69,7 @@ struct AddWorkoutView: View {
         exerciseName = ""
         sets = ""
         reps = ""
+        weight = ""
     }
     
     private func saveWorkout() {

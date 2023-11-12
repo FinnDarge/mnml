@@ -12,7 +12,7 @@ struct WorkoutDetailView: View {
             List {
                 ForEach(workout.exercisesArray.indices, id: \.self) { index in
                     HStack {
-                        Text("\(workout.exercisesArray[index].name ?? "Unknown Exercise") | \(workout.exercisesArray[index].sets) Sets | \(workout.exercisesArray[index].reps) Reps")
+                        Text("\(workout.exercisesArray[index].name ?? "Unknown Exercise") | \(workout.exercisesArray[index].sets) Sets | \(workout.exercisesArray[index].reps) Reps | \(workout.exercisesArray[index].weight) Kg")
                     }
                 }
                 .onDelete(perform: deleteExercise)

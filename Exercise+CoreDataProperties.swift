@@ -19,6 +19,7 @@ extension Exercise {
     @NSManaged public var name: String?
     @NSManaged public var sets: Int16
     @NSManaged public var reps: Int16
+    @NSManaged public var weight: Int16
     @NSManaged public var workout: Workout?
 
 }
